@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base Styles ─── */
+@layer base {
+  body {
+    @apply bg-surface-primary text-content-primary font-body;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    @apply bg-brand text-surface-primary;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-surface-primary; }
+  ::-webkit-scrollbar-thumb { @apply bg-content-muted rounded-full; }
+}
+
+/* ─── Component Classes ─── */
+@layer components {
+  .btn-primary {
+    @apply bg-brand text-surface-primary px-6 py-3 rounded-full font-semibold
+           transition-all duration-300 hover:-translate-y-0.5
+           hover:shadow-[0_12px_40px_rgba(232,255,89,0.2)];
+  }
+
+  .btn-secondary {
+    @apply bg-surface-card border border-white/5 text-content-primary
+           px-6 py-3 rounded-full font-semibold transition-all duration-300
+           hover:border-content-muted hover:-translate-y-0.5;
+  }
+
+  .card {
+    @apply bg-surface-card border border-white/5 rounded-xl
+           transition-all duration-300 hover:border-brand/20
+           hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.4),0_0_40px_rgba(232,255,89,0.08)];
+  }
+
+  .input {
+    @apply w-full px-4 py-3 bg-surface-elevated border border-white/5
+           rounded-lg text-content-primary outline-none transition-all duration-300
+           focus:border-brand focus:ring-2 focus:ring-brand/15
+           placeholder:text-content-muted;
+  }
+
+  .section-label {
+    @apply inline-flex items-center gap-2 font-mono text-xs uppercase
+           tracking-widest text-brand mb-4;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-5xl tracking-tight leading-tight mb-4;
+  }
+}
+
+/* ─── Animations ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.7s ease both;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
