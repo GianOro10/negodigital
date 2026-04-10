@@ -1,4 +1,4 @@
-# 🚀 NegoDigital — Plataforma de Digitalización de Negocios Locales
+# NegoDigital — Plataforma de Digitalización de Negocios Locales
 
 > Descubre negocios sin presencia digital y créales su página web.
 
